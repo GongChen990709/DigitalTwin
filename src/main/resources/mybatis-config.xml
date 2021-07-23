@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?> <!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+<!--Enable event log for database operations using default logging format-->
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+
+<!--Simplify the process of locating the entities class in mapper.xml files-->
+<!--Default aliases for entities are the lower-case class name-->
+    <typeAliases>
+        <package name="DigitalTwin.Entities"/>
+    </typeAliases>
+
+
+<!--Register all mapper.xml files; Note: all mapper files should be the same name with their corresponding Dao interfaces     -->
+    <mappers>
+        <package name="DigitalTwin.Dao"/>
+    </mappers>
+
+</configuration>

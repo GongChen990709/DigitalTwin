@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="DigitalTwin.Dao.demoMapper">
+    <select id="queryDataByIndex" resultType="dataEntity">
+        select * FROM (select distinct change_to_tag_index, description FROM cde_tag_index_mapping) a, cdeasia_reporting.cde_plant_tag_data as D WHERE a.change_to_tag_index = D.tag_index and D.tag_index=#{index}
+    </select>
+</mapper>
